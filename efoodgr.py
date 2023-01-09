@@ -117,31 +117,9 @@ def req(js0n: dict=None, r=None):
                         pass
                 return out
 
-class File:
-    def __init__(self, file_name :str=None):
-        self.file_name = file_name
-    def writeJson(self, text :dict=None):
-        if text != None:
-            try:
-                data0 = json.dumps(text)
-            except Exception:
-                data0 = None
-            if data0 != None:
-                with open(self.file_name, "w+") as f:
-                    f.write(data0)
-    def readJson(self):
-        if self.file_name in os.listdir():
-            with open(self.file_name, "r+") as f:
-                data0 = f.read()
-                try:
-                    data1 = json.loads(data0)
-                except Exception:
-                    data1 = None
-                return data1
-
 class Efood:
     def __init__(self):
-        with requests.session() as ss:
+        with requests.Session() as ss:
             self.session = ss
             headers_config = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.42",

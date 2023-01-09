@@ -152,7 +152,7 @@ class Efood:
             for header in headers_config:
                 self.session.headers[header] = headers_config[header]
     def login(self, email :str=None, password :str=None):
-        if (email != None and isinstance(email, str) and password != None and isinstance(password, str)):
+        if email != None and isinstance(email, str) and password != None and isinstance(password, str):
             config["login"]["data"]["email"] = email
             config["login"]["data"]["password"] = password
             data0 = req(config["login"], self.session)

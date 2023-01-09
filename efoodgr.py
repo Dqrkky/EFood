@@ -1,7 +1,4 @@
-import json
-import os
 import requests
-import urllib3
 
 config = {
     "register": {
